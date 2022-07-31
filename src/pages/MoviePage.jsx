@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-export const MoviePage = () => {
+const MoviePage = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
@@ -43,3 +43,5 @@ export const MoviePage = () => {
     </main>
   );
 };
+
+export default MoviePage;

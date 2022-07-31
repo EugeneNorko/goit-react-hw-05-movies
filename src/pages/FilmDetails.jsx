@@ -23,7 +23,7 @@ const Image = styled.img`
   max-width: 250px;
   margin-right: 50px;
 `;
-export const FilmDetails = () => {
+const FilmDetails = () => {
   const { moviesId } = useParams();
   const [filmInfo, setFilmInfo] = useState(null);
   const location = useLocation();
@@ -94,3 +94,5 @@ export const FilmDetails = () => {
     </main>
   );
 };
+
+export default FilmDetails;
