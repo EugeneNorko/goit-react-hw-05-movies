@@ -16,29 +16,20 @@ const MoviePage = () => {
     }
     fetchSearchFilms(query)
       .then(res => {
-        // console.log(res.data.results);
         setMovies(res.data.results);
       })
       .catch(error => console.log(error));
   }, [query]);
 
-  // const onChangeQuery = value => {
-  //   setSearchValue(value);
-  // };
   const onSubmitForm = e => {
     e.preventDefault();
-    // console.log(e.currentTarget.searchValue.value);
     const searchValue = e.currentTarget.searchValue.value;
     setSearchParams(searchValue !== '' ? { query: searchValue } : {});
   };
 
   return (
     <main>
-      <FormSearch
-        value={query}
-        onSubmit={onSubmitForm}
-        // onChange={onChangeQuery}
-      />
+      <FormSearch value={query} onSubmit={onSubmitForm} />
       <MovieList arrayOfFilms={movies} />
     </main>
   );

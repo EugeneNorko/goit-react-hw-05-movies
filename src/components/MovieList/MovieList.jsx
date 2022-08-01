@@ -6,7 +6,6 @@ export const MovieList = ({ arrayOfFilms }) => {
   return (
     <ul>
       {arrayOfFilms.map(({ id, title, name }) => {
-        // console.log(id);
         return (
           <li key={id}>
             <Link to={`/movies/${id}`} state={{ from: location }} key={id}>

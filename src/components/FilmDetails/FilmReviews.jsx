@@ -2,14 +2,13 @@ import { fetchGetReviews } from 'Api/FetchApi';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-export const FilmReviews = () => {
+const FilmReviews = () => {
   const { moviesId } = useParams();
   const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
     fetchGetReviews(moviesId)
       .then(res => {
-        // console.log(res.data.results);
         setReviews(res.data.results);
       })
       .catch(erorr => console.log(erorr));
@@ -40,3 +39,5 @@ export const FilmReviews = () => {
     </section>
   );
 };
+
+export default FilmReviews;

@@ -7,14 +7,13 @@ const Image = styled.img`
   display: block;
   max-width: 150px;
 `;
-export const FilmCast = () => {
+const FilmCast = () => {
   const { moviesId } = useParams();
   const [actors, setActors] = useState(null);
 
   useEffect(() => {
     fetchGetActors(moviesId)
       .then(res => {
-        // console.log(res.data);
         setActors(res.data);
       })
       .catch(error => console.log(error));
@@ -47,3 +46,5 @@ export const FilmCast = () => {
     </section>
   );
 };
+
+export default FilmCast;

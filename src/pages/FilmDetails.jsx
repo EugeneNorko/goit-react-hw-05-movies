@@ -27,12 +27,11 @@ const FilmDetails = () => {
   const { moviesId } = useParams();
   const [filmInfo, setFilmInfo] = useState(null);
   const location = useLocation();
-  // console.log(location);
+  const setTurnBackLink = location.state ? location.state.from : '/';
 
   useEffect(() => {
     fetchSearchId(moviesId)
       .then(res => {
-        // console.log(res.data);
         setFilmInfo(res.data);
       })
       .catch(error => console.log(error));
@@ -60,7 +59,7 @@ const FilmDetails = () => {
 
   return (
     <main>
-      <Link to={location.state.from}>Turn back</Link>
+      <Link to={setTurnBackLink}>Turn back</Link>
       <Section>
         <MainBox>
           <div>
