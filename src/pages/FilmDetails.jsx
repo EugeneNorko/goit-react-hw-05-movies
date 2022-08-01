@@ -89,7 +89,9 @@ const FilmDetails = () => {
           </li>
         </ul>
       </Section>
-      <Outlet />
+      <Suspense fallback={<p>Please Wait</p>}>
+        <Outlet />
+      </Suspense>
     </main>
   );
 };
