@@ -1,5 +1,5 @@
 import { fetchSearchId } from 'Api/FetchApi';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import {
   useParams,
   Outlet,
